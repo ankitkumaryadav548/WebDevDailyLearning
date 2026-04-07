@@ -1,0 +1,53 @@
+<!-- //event Propogetion => how the event travel through the DOM from top to target
+//example => click the button or press any key
+1.Capturing stage (top to down) =>
+event will start from  top and reach to target(bottom)
+2.Target Phase =>
+event reach to target actual element
+3.bubbling Phase (bottom to top) =>
+event goes from back to root -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parentDiv" style="padding:20px;background:rebeccapurple">
+        parent
+        </div>
+        <button id="child">click</button>
+        <!-- event Delegation -->
+         <ul id="list">
+         <li>123</li>
+         <li>123</li>
+         <li>123</li>
+         <li>123</li>
+            </ul>
+    <script>
+        let element = document.getElementById("parentDiv")
+        element.addEventListener("click",(e)=>
+    {
+        console.log("Parent is clicked")
+    })
+    let element1 = document.getElementById("child")
+    element1.addEventListener("click",()=>
+{
+    console.log("child is clicked")
+    // alert("Hello , button is clicked")
+})
+
+let element2 = document.getElementById("list")
+element2.addEventListener("click",(e)=>
+{
+    console.log("list is click")
+})
+e.stopPropagation()  //it will end executing of code
+
+       </script>
+</body>
+</html>
+

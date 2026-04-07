@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Task Management</h1>
+    <input type="text" name="" id="taskinput" placeholder="Enter Task">
+    <button id="addBtn">Add Task</button>
+    <input type="text" name="" id="search" placeholder="search Task">
+    <ul id="Tasklist"></ul>
+
+    <script>
+        //access all element
+        let taskinput = document.getElementById("taskinput")
+        let addBtn = document.getElementById("addBtn")
+        let Tasklist = document.getElementById("Tasklist")
+        let search = document.getElementById("search")
+
+        //Add Task
+        addBtn.addEventListener("click", ()=>
+    {
+        // if(taskinput.value==="") return
+        //add Task
+        let li = document.createElement("li")
+        //add text
+        li.innerHTML = `
+        <span>${taskinput.value}</span>
+        <button class="del">Delete</button>`
+
+        Tasklist.appendChild(li)
+        //clear the input field
+        taskinput.value=""
+    })
+
+
+    //Task to complete
+
+
+    //Delete the task
+
+    //
+
+
+    </script>
+
+</body>
+</html>
