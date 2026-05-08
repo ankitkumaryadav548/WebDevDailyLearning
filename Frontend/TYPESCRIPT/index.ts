@@ -2,7 +2,7 @@
 //Type system and annotions,
 //type system -> what type of data variable can hold
 //run the ts file
-//tsc filename.ts 
+//tsc filename.ts
 
 // import { is }
 //  from "express/lib/request"
@@ -44,40 +44,58 @@
 
 // ex2 of interface
 
-interface Order{
-    orderId:number;
-    customerName:string;
-    product:string;
-    price:number;
-    rating:number
-}
-//create object for interface
-let order1: Order={
-    orderId:12121221,
-    customerName:"Ahsakg",
-    product:"pen",
-    price:10,
-    rating:5 
+// interface Order{
+//     orderId:number;
+//     customerName:string;
+//     product:string;
+//     price:number;
+//     rating:number
+// }
+// //create object for interface
+// let order1: Order={
+//     orderId:12121221,
+//     customerName:"Ahsakg",
+//     product:"pen",
+//     price:10,
+//     rating:5 
 
-}
-// create a function Using interface 
-function PrintOrder(order:Order){
-    console.log("Order id",order.orderId)
-    console.log("Order id",order.customerName)
-    // ...
-
-
-}
-
-//call the function
-PrintOrder(order1)
-
-//update
-order1.price = 10
-console.log("after update")
-console.log(order1.customerName)
-console.log(order1.price)
-// console.log(order1.customerName)  //shortcut way to print 
+// }
+// // create a function Using interface 
+// function PrintOrder(order:Order){
+//     console.log("Order id",order.orderId)
+//     console.log("Order id",order.customerName)
+//     // ...
 
 
+// }
 
+// //call the function
+// PrintOrder(order1)
+
+// //update
+// order1.price = 10
+// console.log("after update")
+// console.log(order1.customerName)
+// console.log(order1.price)
+// // console.log(order1.customerName)  //shortcut way to print 
+
+
+
+
+
+//types aliases
+//giving customerName to types
+//instead of typing same name again and again we can create short name
+//type TypesName = datatypes
+
+// let StudentName1:Name="srsqwe"
+// //Name is nothing but just another name for string
+// type stu ={
+//     name:string ;
+//     age:number
+// }
+
+// let s1:stu={
+//     name:"adqe",
+//     age:20
+// }
