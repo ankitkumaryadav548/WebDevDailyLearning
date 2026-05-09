@@ -12,14 +12,14 @@ mongoose.connect("mongodb://127.0.0.1:27017/studentDB")
     console.log(err)
 });
 
-const studentSchema = new mongoose.Schema({
+const studentSchema = new mongoose.Schema({   //Schema 
     name: {type:String, required:true},
     course: String,
     age: Number,
     marks: Number
 });
 
-const Student = mongoose.model("Student", studentSchema);
+const Student = mongoose.model("Student", studentSchema);   //Model 
 
 async function createStudent(){
     const stu = new Student({
