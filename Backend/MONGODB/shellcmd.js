@@ -27,13 +27,9 @@ async function run(){
         console.log("Inserted ID:", insertResult.insertedId);
         
         console.log("Inserted ID:", insertResult.insertedId);
-
-
-
-
+        
         const data = await students.find().toArray();
         console.log("Read content:", data);
-
 
         const updateResult = await students.updateOne(
             {_id:insertResult.insertedId },
