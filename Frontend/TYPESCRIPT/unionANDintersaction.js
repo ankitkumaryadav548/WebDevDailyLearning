@@ -1,9 +1,10 @@
 "use strict";
 //Union and intersaction
 //Union -> a variable can hold multiple types -OR 
-let value;
+let values;
 value = 23;
 value = "hello";
+console.log(values);
 function test(id) {
     console.log("user id is ", id);
 }

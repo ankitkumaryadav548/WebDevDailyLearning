@@ -17,9 +17,9 @@ console.log(isStudent)
 
 
 // array
-// let numbers:number[] = [12,23,34,45,56,67]
-// console.log(numbers)
-// let array = [12,23,23,41,34,45]
+let array = [12,23,23,41,34,45]   // => normal way to create array
+let numbers:number[] = [12,23,34,45,56,67]  // => typescript way 
+console.log(numbers)
 
 //object => collections of keys and values pairs 
 let users = {        // javascript format
@@ -112,7 +112,7 @@ console.log(sum(10, 20));
 // instead of typing same name again and again we can create short name
 // type TypesName = datatypes
 
-let StudentName1:Name = "srsqwe"
+// let StudentName1:Name = "srsqwe"
 // Name is nothing but just another name for string
 
 //example of types aliases
