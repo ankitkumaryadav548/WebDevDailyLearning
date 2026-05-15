@@ -42,7 +42,7 @@ fs.appendFile(
 
 
 const fs = require('fs')
-fs.readFile("test.txr", utf8,(err,data)=>
+fs.readFile("test.txt", utf8,(err,data)=>
 {
     if(err){
         console.log(err)
