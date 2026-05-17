@@ -1,0 +1,131 @@
+<!-- Design a simple student dashboard webpage using HTML and JavaScript.
+Requirements:
+
+Store student names inside an array
+Dynamically display all students using DOM manipulation
+When a student name is clicked, change its background color
+Add a button to insert a new student dynamically
+Use DOM traversal to access and update elements inside the student list -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+        }
+
+        li{
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+            width: 200px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Student Dashboard</h1>
+
+    <!-- Input field -->
+    <input 
+        type="text" 
+        id="studentInput"
+        placeholder="Enter Student Name"
+    >
+
+    <!-- Add button -->
+    <button id="addBtn">
+        Add Student
+    </button>
+
+    <br><br>
+
+    <!-- Student list -->
+    <ul id="studentList"></ul>
+
+
+
+    <script>
+
+        // Array of students
+        let arr = ["Ankit","Delip","Gautam","Pappu"];
+
+
+        // Access elements
+        let studentList = document.getElementById("studentList");
+
+        let addBtn = document.getElementById("addBtn");
+
+        let studentInput = document.getElementById("studentInput")
+        // Function to display students
+        function displayStudents(){
+            // Clear old list
+            studentList.innerHTML = "";
+            // Loop through array
+            arr.forEach((student) => {
+
+                // Create li
+                let li = document.createElement("li");
+
+                // Add student name
+                li.innerText = student;
+
+                // Append li
+                studentList.appendChild(li);
+
+            });
+
+        }
+        // Initial display
+        displayStudents();
+
+        // Change background color when clicked
+        studentList.addEventListener("click", (event) => {
+
+            // Check clicked element
+            if(event.target.tagName === "LI"){
+
+                // Change background color
+                event.target.style.backgroundColor = "yellow";
+
+
+                // DOM Traversal
+                console.log(event.target.parentElement);
+
+            }
+
+        });
+
+        // Add new student
+        addBtn.addEventListener("click", () => {
+
+            // Check empty input
+            if(studentInput.value === ""){
+
+                alert("Enter Student Name");
+
+                return;
+            }
+            // Add into array
+            arr.push(studentInput.value);
+
+            // Refresh display
+            displayStudents();
+
+            // Clear input
+            studentInput.value = "";
+        });
+
+    </script>
+
+</body>
+</html>
