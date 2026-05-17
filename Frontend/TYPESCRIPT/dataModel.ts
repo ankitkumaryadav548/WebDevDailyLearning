@@ -1,4 +1,4 @@
-import { count } from "node:console"
+// import { count } from "node:console"
 
 //object
 let user:{
@@ -9,7 +9,6 @@ let user:{
     age:20,
     rollNo:28
 }
-
 
 //example type model
 //type is a keyword used to create your own data type (custom type).

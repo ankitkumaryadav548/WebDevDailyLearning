@@ -6,6 +6,7 @@ function connect(callback)
     },2000)
     Callback()  ; //callback
 }
+
 function download() {
     setTimeout(()=>
     {
@@ -29,18 +30,18 @@ connect(function(){
     })
 })
 
-//problem with callback is 
-//1. readability of code is decreased
-//2.debugging is complex and time complexity is also increased
-//3.identation of code is complex
+// problem with callback is 
+// 1. readability of code is decreased
+// 2.debugging is complex and time complexity is also increased
+// 3.identation of code is complex
 
-//Promise
+// Promise
 // rep some value that will be available in future
-//three state => 1.pending 2.resolve 3.fullfilled
-//promise is used to 
-//fetch the data from server or API
-//reading the files
-//database calls
+// three state => 1.pending 2.resolve 3.fullfilled
+// promise is used to 
+// fetch the data from server or API
+// reading the files
+// database calls
 
 // // create the promise 
 let foodOrder = new Promise((resolve,reject)=>{
@@ -86,6 +87,23 @@ age.catch(result=>console.log(result))
 age.then(result=>console.log(result))
 
 
+//another example of Promise
+let examResult = new Promise((resolve,reject)=>
+{
+    let passed = true
+    if(passed){
+        resolve("You passed this exam")
+    }
+    else
+        reject("You failed this exam")
+})
+examResult.then(result=>{
+    console.log(result)
+})
+examResult.catch((error)=>
+{
+    console.log(error)
+})
 // //promise
 function checklogin(username,password){
     return new Promise((resolve,reject)=>
@@ -121,7 +139,6 @@ account(5000,3000)
 .then(debited=>console.log(debited))
 .catch(error=>console.log(error))
 
-
 // async
 //handle the login system with asyn function
 async function loginUser() {
@@ -135,6 +152,26 @@ async function loginUser() {
     }
 }
 loginUser()   
+
+//another  example
+async function orderFood(food ){
+     return new Promise((resolve,reject)=>
+    {
+        console.log("Food is ordering....")
+        setTimeout(()=>
+        {
+            if(food==="butterPanner")
+                resolve("my choice of food is received")
+            else
+                reject("my choice of food is not received")
+
+        },2000)
+
+    })
+}
+orderFood("butterPanner")
+.then((result)=>console.log(result))
+.catch((error)=>console.log(error))
 
 
 
@@ -156,19 +193,16 @@ async function getData() {
             console.log(user.email)
             console.log(user.username)
         })
-
-
-
     }
     catch(error)
     {
         console.log(error)
     }
-
-
 }
 getData() 
 
+
+//another example
 async function getData() {
     try {
         let Response = await fetch("https://jsonplaceholder.typicode.com/photos")

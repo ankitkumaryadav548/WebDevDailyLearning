@@ -1,0 +1,58 @@
+<!-- Create a webpage containing a heading, paragraph, and button.
+Using JavaScript DOM manipulation:
+
+Change the heading text when button is clicked
+Change paragraph color dynamically
+Traverse from button to parent element
+Add a new paragraph dynamically to the webpage -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Example</title>
+</head>
+<body>
+
+    <h1 id="heading">Heading</h1>
+
+    <p id="para">This is para</p>
+
+    <button id="btn">Click Me</button>
+
+    <script>
+
+        let heading = document.getElementById("heading");
+
+        let btn = document.getElementById("btn");
+
+        let para = document.getElementById("para");
+
+
+        btn.addEventListener("click", () => {
+
+            // Change heading text
+            heading.innerText = "Hello";
+
+            // Change paragraph color
+            para.style.color = "red";
+
+            // DOM Traversal
+            console.log(btn.parentElement);
+
+            // Create new paragraph
+            let newPara = document.createElement("p");
+
+            // Add text
+            newPara.innerText = "New Paragraph Added";
+
+            // Add paragraph to body
+            document.body.appendChild(newPara);
+
+        });
+
+    </script>
+
+</body>
+</html>

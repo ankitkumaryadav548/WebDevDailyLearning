@@ -3,46 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task Management</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+        }
+
+        li{
+            margin: 10px 0;
+        }
+
+        .completed{
+            text-decoration: line-through;
+            color: gray;
+        }
+
+    </style>
+
 </head>
 <body>
+
     <h1>Task Management</h1>
-    <input type="text" name="" id="taskinput" placeholder="Enter Task">
+
+    <!-- Input for task -->
+    <input 
+        type="text" 
+        id="taskinput" 
+        placeholder="Enter Task"
+    >
+
+    <!-- Add button -->
     <button id="addBtn">Add Task</button>
-    <input type="text" name="" id="search" placeholder="search Task">
+
+    <br><br>
+
+    <!-- Search task -->
+    <input 
+        type="text" 
+        id="search" 
+        placeholder="Search Task"
+    >
+
+    <!-- Task list -->
     <ul id="Tasklist"></ul>
 
+
     <script>
-        //access all element
-        let taskinput = document.getElementById("taskinput")
-        let addBtn = document.getElementById("addBtn")
-        let Tasklist = document.getElementById("Tasklist")
-        let search = document.getElementById("search")
 
-        //Add Task
-        addBtn.addEventListener("click", ()=>
-    {
-        // if(taskinput.value==="") return
-        //add Task
-        let li = document.createElement("li")
-        //add text
-        li.innerHTML = `
-        <span>${taskinput.value}</span>
-        <button class="del">Delete</button>`
+        // Access all elements
+        let taskinput = document.getElementById("taskinput");
 
-        Tasklist.appendChild(li)
-        //clear the input field
-        taskinput.value=""
-    })
+        let addBtn = document.getElementById("addBtn");
+
+        let Tasklist = document.getElementById("Tasklist");
+
+        let search = document.getElementById("search");
+
+        // Add Task
+        addBtn.addEventListener("click", () => {
+
+            // Check empty input
+            if(taskinput.value === ""){
+
+                alert("Please enter task");
+
+                return;
+            }
+
+            // Create li
+            let li = document.createElement("li");
+
+            // Add HTML inside li
+            li.innerHTML = `
+
+                <span class="taskText">
+                    ${taskinput.value}
+                </span>
+
+                <button class="complete">
+                    Complete
+                </button>
+
+                <button class="del">
+                    Delete
+                </button>
+
+            `;
+
+            // Add li to list
+            Tasklist.appendChild(li);
+
+            // Clear input
+            taskinput.value = "";
+
+        });
+
+        // Event Delegation
+        Tasklist.addEventListener("click", (event) => {
+
+            // Delete Task
+            if(event.target.classList.contains("del")){
+
+                event.target.parentElement.remove();
+
+            }
 
 
-    //Task to complete
+            // Complete Task
+            if(event.target.classList.contains("complete")){
+
+                let span = event.target.parentElement.querySelector(".taskText");
+
+                span.classList.toggle("completed");
+
+            }
+
+        });
 
 
-    //Delete the task
 
-    //
 
+        // Search Task
+        search.addEventListener("keyup", () => {
+
+            // Get search value
+            let searchText = search.value.toLowerCase();
+
+            // Get all li
+            let tasks = Tasklist.querySelectorAll("li");
+
+
+            tasks.forEach((task) => {
+
+                let taskName = task.innerText.toLowerCase();
+
+                // Match task
+                if(taskName.includes(searchText)){
+
+                    task.style.display = "block";
+
+                }
+                else{
+
+                    task.style.display = "none";
+
+                }
+
+            });
+
+        });
 
     </script>
 
