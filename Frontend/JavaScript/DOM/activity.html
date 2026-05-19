@@ -1,0 +1,164 @@
+<!-- Design a simple movie watchlist webpage using HTML and JavaScript.
+
+Requirements:
+
+Store movie names inside an array
+Dynamically display all movies using DOM manipulation
+Add a button to insert a new movie into the list
+When a movie name is clicked, change its text color and background dynamically
+Use event delegation to handle clicks on movie items
+Use DOM traversal to access parent and child elements inside the movie list -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watchlist</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+        }
+
+        li{
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid black;
+            width: 250px;
+            cursor: pointer;
+        }
+
+        .active{
+            background-color: yellow;
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Movie Watchlist</h1>
+
+    <!-- Input field -->
+    <input 
+        type="text"
+        id="movieInput"
+        placeholder="Enter Movie Name"
+    >
+
+    <!-- Add button -->
+    <button id="addBtn">
+        Add Movie
+    </button>
+
+    <br><br>
+
+    <!-- Movie list -->
+    <ul id="movieList"></ul>
+
+
+
+    <script>
+
+        // Array of movies
+        let movies = [
+
+            "KGF",
+            "Pushpa",
+            "Bahubali",
+            "Animal"
+
+        ];
+
+
+
+        // Access elements
+        let movieList = document.getElementById("movieList");
+
+        let addBtn = document.getElementById("addBtn");
+
+        let movieInput = document.getElementById("movieInput");
+
+
+
+
+        // Function to display movies
+        function displayMovies(){
+
+            // Clear old list
+            movieList.innerHTML = "";
+
+
+
+            // Loop through array
+            movies.forEach((movie) => {
+
+                // Create li
+                let li = document.createElement("li");
+
+                // Add movie name
+                li.innerHTML = `
+
+                    <span class="movieName">
+                        ${movie}
+                    </span>
+
+                `;
+
+                // Add li to ul
+                movieList.appendChild(li);
+
+            });
+
+        }
+
+
+
+        // Initial display
+        displayMovies();
+
+
+
+
+        // Add new movie
+        addBtn.addEventListener("click", () => {
+
+            // Check empty input
+            if(movieInput.value === ""){
+
+                alert("Enter Movie Name");
+
+                return;
+            }
+
+            // Add into array
+            movies.push(movieInput.value);
+            // Refresh list
+            displayMovies();
+            // Clear input
+            movieInput.value = "";
+
+        });
+        // Event Delegation
+        movieList.addEventListener("click", (event) => {
+
+            // Check clicked movie
+            if(event.target.classList.contains("movieName")){
+
+                // Dynamic styling
+                event.target.classList.toggle("active");
+
+
+                // DOM Traversal
+                console.log(event.target.parentElement);
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
