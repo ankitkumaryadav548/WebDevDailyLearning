@@ -1,3 +1,4 @@
+// Props are used to pass data from a parent component to a child component.
 import React from "react";
 
 function Welcome(props) {
