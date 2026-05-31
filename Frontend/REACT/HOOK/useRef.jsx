@@ -1,3 +1,7 @@
+// useRef is a React Hook that allows you to:
+
+// Access and manipulate DOM elements directly
+// Store a value that persists between renders without causing re-renders
 import { useRef } from 'react';
 
 function InputFocus() {
@@ -12,3 +16,5 @@ function InputFocus() {
     </div>
   );
 }
+
+
