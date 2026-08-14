@@ -2,7 +2,7 @@
 // 1st Adding or Removing element in the array
 let studentMarks = [12,23,34,45,65,76]
 console.log(studentMarks)
-studentMarks.push(30);  // add elemnt at last of array
+studentMarks.push(30);  // add element at last of array
 console.log(studentMarks)
 studentMarks.pop();     // remove or delete alenment from last of array
 console.log(studentMarks)
