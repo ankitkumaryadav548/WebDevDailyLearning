@@ -1,3 +1,14 @@
+// This project is the foundation of how React works internally. You're building a mini version of React's renderer that converts a JavaScript object into a real HTML element.
+
+//jsx => javascript xml => writing html inside js file 
+
+// Normally, React lets you write:
+// <a href="https://google.com" target="_blank">
+//   Click me
+// </a>
+// But browsers do not understand JSX. React first converts it into a JavaScript object, then React DOM creates the actual HTML element.
+
+
 //Method 1
 // function customRender(reactElement , container){
 //     const domElement = document.createElement(reactElement.type)
@@ -24,9 +35,9 @@ const reactElement = {
     type : 'a',
     props:{
         href:'https://google.com',
-        target : '_blank'
+        target : '_blank',
+        children : 'click me to visit to google'
     },
-    children : 'click me to visit to google'
 }
 
 const mainContainer =  document.querySelector('#root')
