@@ -8,6 +8,7 @@
 // </a>
 // But browsers do not understand JSX. React first converts it into a JavaScript object, then React DOM creates the actual HTML element.
 
+// In one sentence: this project is teaching you how a React element (JavaScript object) is transformed into a real HTML element in the browser.
 
 //Method 1
 // function customRender(reactElement , container){
@@ -31,13 +32,18 @@ function customRender(reactElement , container){
 }
 
 
+// const reactElement = {
+//     type : 'a',
+//     props:{
+//         href:'https://google.com',
+//         target : '_blank',
+//         children : 'click me to visit to google'
+//     },
+// }
+
 const reactElement = {
-    type : 'a',
-    props:{
-        href:'https://google.com',
-        target : '_blank',
-        children : 'click me to visit to google'
-    },
+    type : 'p',
+    children : 'this is a para tag'
 }
 
 const mainContainer =  document.querySelector('#root')
