@@ -11,6 +11,11 @@ function App() {
   const addValue = () =>{
     console.log("clicked",counter);
     // counter ++ 
+
+    setCounter(prevCounter => prevCounter + 1) //it will update 1 by 1 every setCounter
+    setCounter(prevCounter => prevCounter + 1) // if you will simply write couter++ , many 
+    setCounter(prevCounter => prevCounter + 1) // time then it will not update (interview)
+    setCounter(prevCounter => prevCounter + 1)
     if(counter<20)
     setCounter(counter+1)
     else 
