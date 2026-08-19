@@ -1,6 +1,7 @@
 // import "./globals.css";
 import Footer from "./component/Footer";
 import Navbar from "./component/navbar";
+import Button from "./component/Button";
 
 export default function RootLayout({children}) {
 //RootLayout is function name,we can change it but for clear and conventional name we write
@@ -21,8 +22,10 @@ export default function RootLayout({children}) {
         {/* React sees this as: "Render the component called Navbar." */}
         {children}
         {/* children is the current page content. it very*/}
+        <Button/>
         <Footer/>
         {/* React sees this as: "Render the component called Footer." */}
+
       </body>
     </html>
   );
