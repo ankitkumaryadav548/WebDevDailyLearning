@@ -4,8 +4,8 @@ import './App.css'
 
 function App() {
   const [color , setcolor] = useState("olive")
-
-
+  
+  
   return (
     <>
      <div className="w-full h-screen duration-200"
@@ -18,3 +18,6 @@ function App() {
 }
 
 export default App
+
+
+
