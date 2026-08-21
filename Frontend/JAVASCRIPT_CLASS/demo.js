@@ -84,30 +84,32 @@
 
 // destructuring
 
-const obj = {
-    name :"Ankit",
-    age :21,
-    sub : "react"
-}
-// console.log(obj.name)
-// console.log(obj.age)
-// console.log(obj.sub)
+// const obj = {
+//     name :"Ankit",
+//     age :21,
+//     sub : "react"
+// }
+// // console.log(obj.name)
+// // console.log(obj.age)
+// // console.log(obj.sub)
 
-const {name, age,sub} = obj   // destructuring
-console.log(name,age,sub)
+// const {name, age,sub} = obj   // destructuring
+// console.log(name,age,sub)
 
-//spread opertor
+// //spread opertor
 
-const numbers = [1,2,4,5,6]
-const newnum = [...numbers]
+// const numbers = [1,2,4,5,6]
+// const newnum = [...numbers]
 
-console.log(newnum)
+// console.log(newnum)
 
 
-//rest opertor
+// //rest opertor
 
-const abc = (...num) => {
-    console.log(num)
-}
+// const abc = (...num) => {
+//     console.log(num)
+// }
 
-console.log(abc(10,15))
+// console.log(abc(10,15))
+
+
