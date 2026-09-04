@@ -1,6 +1,23 @@
 import Product from "./assets/Product";
 function App() {
   const a = 10;
+  let toggle = true;
+  let prodt;
+  if(toggle){   // conditional rendering 
+        prodt = 
+        <>
+          <Product name="HP laptop" price={60}/>
+          <Product name="acer laptop" price={10}/>
+          <Product name="lenavo laptop" price={20}/>
+        </>
+      }
+      else{
+        prodt = <>
+        <Product name="Nothing laptop" price={30}/>
+        <Product name="Mac laptop" price={40}/>
+        </>
+      }
+
   return (
     <>
 
@@ -8,12 +25,8 @@ function App() {
       <p>Hii everyone</p>
       <p>Value of a is {a}</p>
       <h1>Product Page</h1>
-      <Product name="HP laptop" price={60}/>
-      <Product name="acer laptop" price={10}/>
-      <Product name="lenavo laptop" price={20}/>
-      <Product name="Nothing laptop" price={30}/>
-      <Product name="Mac laptop" price={40}/>
-
+      {prodt}
+      
     </>
   )
 }
@@ -22,7 +35,7 @@ export default App
 
 
 // reconcilation => 
-// comparing virtual1(old) and virtual2(real) => 2 typw od virtual dom 
+// comparing virtual1(old) and virtual2(new) => 2 typw od virtual dom 
 // using deffing algorithm
 
 //if a = 10;
@@ -41,4 +54,7 @@ export default App
 
 //entry is main.jsx ok so if i have to render any component globally then only we have to render in main.jsx file other wise we have to render particular page or component to App.jsx file  only 
 
+//return only stemenet(output) not expression 
+// statement => output of any expression
+// expression => calculation 
 
