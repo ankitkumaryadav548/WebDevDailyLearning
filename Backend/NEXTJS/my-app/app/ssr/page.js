@@ -1,62 +1,59 @@
-// //https://fakestoreapi.com/docs#tag/Products
+//https://fakestoreapi.com/docs#tag/Products
 
-// //cache:"no-store" => for ssr componenet
+//cache:"no-store" => for ssr componenet
 
-// //or for ISR ->{
-// // next:{
-// //         revalidate:60
-// // }}
+//or for ISR ->{
+// next:{
+//         revalidate:60
+// }}
 
 
-// export default async function ProductPage() {
-//     const response = await fetch(
-//         "https://fakestoreapi.com/products",
-//         {
-//             cache: "no-store"
-//         }
-//     );
+export default async function ProductPage() {
+    const response = await fetch(
+        "https://fakestoreapi.com/products",
+        {
+            cache: "no-store"  //SSR 
+        }
+    );
 
-//     const products = await response.json();
+    const products = await response.json();
 
-//     return (
-//         <>
-//             <h1>Products</h1>
+    return (
+        <>
+            <h1>Products</h1>
 
-//             <div>
-//                 {products.map((product) => (
-//                     <div key={product.id}>
-//                         <h2>{product.title}</h2>
+            <div>
+                {products.map((product) => (
+                    <div key={product.id}>
+                        <h2>{product.title}</h2>
 
-//                          <img
-//                             src={product.image}
-//                             alt={product.title}
-//                             width="200"
-//                         />
+                         <img
+                            src={product.image}
+                            alt={product.title}
+                            width="200"
+                        />
 
-//                         <p>Price: ${product.price}</p> */}
+                        <p>Price: ${product.price}</p> */}
 
-//                         <p>{product.description}</p>
+                        <p>{product.description}</p>
 
-//                         <p>Category: {product.category}</p>
+                        <p>Category: {product.category}</p>
 
-//                         <p>
-//                             Rating: {product.rating.rate} 
-//                         </p>
-//                     </div>
-//                 ))}
-//             </div>
-//         </>
-//     );
-// }
+                        <p>
+                            Rating: {product.rating.rate} 
+                        </p>
+                    </div>
+                ))}
+            </div>
+        </>
+    );
+}
 
 
 
 export const dynamic= "force-dynamic" //SSR
 export default async function ProductPage() {
     //api - https://jsonplaceholder.typicode.com/posts
-    
-    
-    
     
     const response = await fetch("https://jsonplaceholder.typicode.com/posts/1",
         {cache:"no-store"})

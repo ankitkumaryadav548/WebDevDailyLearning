@@ -21,7 +21,7 @@ export default function Login(){
         value={username} 
         onChange={(e)=>{e.target.value}}>
         </input>
-        <button onClick={handleLogin}>Login  </button>
+        <button onClick={handleLogin}>Login</button>
         </>
     )
 }

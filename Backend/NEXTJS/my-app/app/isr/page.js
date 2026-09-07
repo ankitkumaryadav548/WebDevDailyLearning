@@ -1,11 +1,8 @@
 
+//ISR => Icremental site rendering 
 export default async function ProductPage() {
     //api - https://jsonplaceholder.typicode.com/posts
-    
-    
-    
-    
-   
+       
     const response = await fetch("https://jsonplaceholder.typicode.com/posts/1",
         {
             next:{
