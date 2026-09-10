@@ -1,31 +1,40 @@
-import Product from "./assets/Product";
+// import Product from "./assets/Product";
+
+import Card from "./Card";
+
 function App() {
-  const a = 10;
-  let toggle = true;
-  let prodt;
-  if(toggle){   // conditional rendering 
-        prodt = 
-        <>
-          <Product name="HP laptop" price={60}/>
-          <Product name="acer laptop" price={10}/>
-          <Product name="lenavo laptop" price={20}/>
-        </>
-      }
-      else{
-        prodt = <>
-        <Product name="Nothing laptop" price={30}/>
-        <Product name="Mac laptop" price={40}/>
-        </>
-      }
+  // const a = 10;
+  // let toggle = true;
+  // let prodt;
+  // if(toggle){   // conditional rendering 
+  //       prodt = 
+  //       <>
+  //         <Product name="HP laptop" price={60}/>
+  //         <Product name="acer laptop" price={10}/>
+  //         <Product name="lenavo laptop" price={20}/>
+  //       </>
+  //     }
+  //     else{
+  //       prodt = <>
+  //       <Product name="Nothing laptop" price={30}/>
+  //       <Product name="Mac laptop" price={40}/>
+  //       </>
+  //     }
 
   return (
     <>
+    <Card/>
+    
+    {/* <section>drftty</section> */}
+   
 
-      <h1>Hello React.js</h1>
+      {/* <h1>Hello React.js</h1>
       <p>Hii everyone</p>
       <p>Value of a is {a}</p>
       <h1>Product Page</h1>
-      {prodt}
+      {prodt} */}
+
+
       
     </>
   )
