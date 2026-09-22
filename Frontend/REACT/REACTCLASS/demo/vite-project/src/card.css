@@ -1,5 +1,51 @@
-.card{
-    height: 20rem;
-    background-color: pink;
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        background-color: rgb(216, 111, 19);
+        display: flex;
+        flex-direction: column;
+        height: 28rem;
+        width: 20rem;
+        border-radius: 3%;
+    }
 
-}
+    .img {
+        height: 13em;
+        width: 20rem;
+        object-fit: cover;
+        border-radius: 3%;
+    }
+    .title{
+        font-size: 24px;
+        font-weight: 800;
+        color: black;
+    }
+    .desc{
+        color: black;
+    }
+    .btn{
+        height: 2rem;
+        width: 5rem;
+        align-items: center;
+        margin-top: 1rem;
+    }
+    .Main{
+    display:flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-around;
+
+    }
+
+    .Passed{
+        color: aliceblue;
+        background-color: green;
+    }
+
+    .Fail{
+        color: aliceblue;
+        background-color: red;
+    }
