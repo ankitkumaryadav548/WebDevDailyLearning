@@ -18,7 +18,6 @@ const Card = ({ title, img, desc }) => {
                 <button className="btn">Click Me</button>
                 </div>
                 <div className={result}>{result}</div>
-
             </div >        
         </div >
     );

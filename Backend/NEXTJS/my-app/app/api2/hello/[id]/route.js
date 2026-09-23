@@ -1,4 +1,7 @@
+import student from "@/app/student/page"
+// import student from "@/app/student/page"
 import { NextResponse } from "next/server"
+import { browser } from "react-dom"
 
 const student = [
     {id:"1",name:"test1"},
@@ -9,7 +12,22 @@ const student = [
 //dynamic route 
 export async function GET(request,{params}) {
     const {id} = await params
+    // return NextResponse.json({
+    //     message:`student is is ${id}`
+    // })
+    // const student = student.find(
+    //     student => student.id == 
+    // )
+}
+
+//PUT - update the data
+export async function PUT(request, {params}) {
+    const [id] = await params 
+    const body = await request.json()
     return NextResponse.json({
-        message:`student is is ${id}`
+        Message : `student ${id} updated`,
+        data:body 
     })
+
+    
 }

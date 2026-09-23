@@ -72,7 +72,7 @@
 
 //import Product from './Product';
 import Card from './Card';
-
+import  Events  from './Events';
 const App = () => {
   // const a = 10;
   // let toggle = true;
@@ -96,10 +96,11 @@ const App = () => {
   ];
 
   return (
-    <div className='Main'>
-      <Card title={arr[0].title} img={arr[0].img} desc={arr[0].desc} />
-      <Card  title={arr[1].title} img={arr[1].img} desc={arr[1].desc} />
-      <Card  title={arr[2].title} img={arr[2].img} desc={arr[2].desc} />
+    <div>
+    {/* <div className='Main'> */}
+    {/* //   <Card title={arr[0].title} img={arr[0].img} desc={arr[0].desc} />
+    //   <Card  title={arr[1].title} img={arr[1].img} desc={arr[1].desc} />
+    //   <Card  title={arr[2].title} img={arr[2].img} desc={arr[2].desc} /> */}
       {/* <h1>Hello World</h1>
       <h2>Hi, Everyone</h2>
       <h3>{a}</h3>
@@ -120,6 +121,8 @@ const App = () => {
       )}
 
     <h3>Vivo</h3> */}
+    <Events/>
+    {/* </div> */}
     </div>
   );
 };
