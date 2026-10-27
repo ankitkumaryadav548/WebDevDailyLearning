@@ -44,7 +44,7 @@
 
 
 // reconcilation => 
-// comparing virtual1(old) and virtual2(new) => 2 typw od virtual dom 
+// comparing virtual1(old) and virtual2(new) => 2 type of  virtual dom 
 // using deffing algorithm
 
 //if a = 10;
@@ -85,40 +85,47 @@
 // Expression → produces a value
 // Statement → performs an action/instruction
 
+//prop driling => passing prop from parent to child then again so on ....
 
 
-
-import Product from './Product';
-import Card from './Card';
+// import Product from './Product';
+import Effects from './Effects';
+import Contexts from './Contexts';
+// import Card from './Card';
 // import  Events  from './Events';
 const App = () => {
-  const a = 10;
-  let toggle = true;
-  const arr = [
-    {
-      title: "Chess Board",
-      img: "https://cdn.exoticindia.com/images/products/original/homeandliving/dde948-6inch.jpg",
-      desc:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore in, magnam earum, minima natus quaerat officiis nobis temporibus iste veniam, eos sint delectus quo! Eaque accusantium quod fugit",
-    },
-    {
-      title: "Chess Board",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCteLbIbkMjbeOUbNcIoNlnv67d4wA5E1DwMFGANSAkQ&s=10",
-      desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore in, magnam earum, minima natus quaerat officiis nobis temporibus iste veniam, eos sint delectus quo! Eaque accusantium quod fugit"
-    },
-    {
-      title: "Chess Board",
-      img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Sion8aXqgKle-QJ72QQIVAcPhCKA7QuZzKKA3d6K8QIF5k8Oh40ke7uZ&s=10",
-      desc: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore in, magnam earum, minima natus quaerat officiis nobis temporibus iste veniam, eos sint delectus quo! Eaque accusantium quod fugit"
-    }
-  ];
+  // const a = 10;
+  // let toggle = true;
+  // const arr = [
+  //   {
+  //     title: "Chess Board",
+  //     img: "https://cdn.exoticindia.com/images/products/original/homeandliving/dde948-6inch.jpg",
+  //     desc:
+  //       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore in, magnam earum, minima natus quaerat officiis nobis temporibus iste veniam, eos sint delectus quo! Eaque accusantium quod fugit",
+  //   },
+  //   {
+  //     title: "Chess Board",
+  //     img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCteLbIbkMjbeOUbNcIoNlnv67d4wA5E1DwMFGANSAkQ&s=10",
+  //     desc: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore in, magnam earum, minima natus quaerat officiis nobis temporibus iste veniam, eos sint delectus quo! Eaque accusantium quod fugit"
+  //   },
+  //   {
+  //     title: "Chess Board",
+  //     img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Sion8aXqgKle-QJ72QQIVAcPhCKA7QuZzKKA3d6K8QIF5k8Oh40ke7uZ&s=10",
+  //     desc: " Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore in, magnam earum, minima natus quaerat officiis nobis temporibus iste veniam, eos sint delectus quo! Eaque accusantium quod fugit"
+  //   }
+  // ];
 
   return (
     <div>
     <div className='Main'> 
-      <Card title={arr[0].title} img={arr[0].img} desc={arr[0].desc} />
+      {/* <Card title={arr[0].title} img={arr[0].img} desc={arr[0].desc} />
       <Card  title={arr[1].title} img={arr[1].img} desc={arr[1].desc} />
-      <Card  title={arr[2].title} img={arr[2].img} desc={arr[2].desc} /> 
+      <Card  title={arr[2].title} img={arr[2].img} desc={arr[2].desc} />  */}
+
+
+      <Effects />
+      <Contexts/>
+    
       {/* <h2>Hi, Everyone</h2>
       <h3>{a}</h3>
 
