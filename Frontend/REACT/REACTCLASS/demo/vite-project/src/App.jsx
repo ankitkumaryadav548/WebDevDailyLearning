@@ -89,8 +89,11 @@
 
 
 // import Product from './Product';
-import Effects from './Effects';
+// import Effects from './Effects';
+import CallBack from './CallBack';
 import Contexts from './Contexts';
+import Memo from './Memo'
+import Custom from './Custom';
 // import Card from './Card';
 // import  Events  from './Events';
 const App = () => {
@@ -123,9 +126,14 @@ const App = () => {
       <Card  title={arr[2].title} img={arr[2].img} desc={arr[2].desc} />  */}
 
 
-      <Effects />
-      <Contexts/>
+      {/* <Effects /> */}
+      {/* <Contexts/>
+      <h2>Hello Everyone</h2> */}
+      {/* <Memo/>
+      <CallBack/> */}
+      <Custom/>
     
+
       {/* <h2>Hi, Everyone</h2>
       <h3>{a}</h3>
 

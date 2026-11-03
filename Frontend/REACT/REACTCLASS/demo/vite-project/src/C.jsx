@@ -1,4 +1,5 @@
 import React from "react"
+
 const C = () => {
     return(
         <>
@@ -6,3 +7,5 @@ const C = () => {
         </>
     )
 }
+
+export default C;
