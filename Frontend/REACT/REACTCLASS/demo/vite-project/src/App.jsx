@@ -90,10 +90,13 @@
 
 // import Product from './Product';
 // import Effects from './Effects';
-import CallBack from './CallBack';
-import Contexts from './Contexts';
-import Memo from './Memo'
-import Custom from './Custom';
+// import CallBack from './CallBack';
+// import Contexts from './Contexts';
+// import Memo from './Memo'
+// import Custom from './Custom';
+// import Form from './Form';
+// import FormHandle from './FormHandle';
+import ZodVal from './ZodVal';
 // import Card from './Card';
 // import  Events  from './Events';
 const App = () => {
@@ -131,7 +134,10 @@ const App = () => {
       <h2>Hello Everyone</h2> */}
       {/* <Memo/>
       <CallBack/> */}
-      <Custom/>
+      {/* <Custom/> */}
+      {/* <Form/>
+      <FormHandle/> */}
+      <ZodVal/>
     
 
       {/* <h2>Hi, Everyone</h2>
@@ -154,6 +160,7 @@ const App = () => {
 
     <h3>Vivo</h3>
     {/* <Events/> */}
+
     </div>
     </div>
   );
