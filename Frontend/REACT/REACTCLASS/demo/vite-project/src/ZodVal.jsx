@@ -34,7 +34,7 @@ const ZodVal = () => {
 
         if (result.success) {
             setError({});
-            alert("Your registration was successful!");
+            alert("Your registration was successfull!");
             console.log("Register Successfully");
         }
         else {
@@ -92,3 +92,11 @@ const ZodVal = () => {
 };
 
 export default ZodVal;
+
+// get => retrive the data
+// post => create the new data
+// put => replace the existing data
+// patch => update the data in particular field
+// delete => delete the data  
+
+// API => https://jsonplaceholder.typicode.com/users

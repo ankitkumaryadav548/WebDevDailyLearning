@@ -96,7 +96,9 @@
 // import Custom from './Custom';
 // import Form from './Form';
 // import FormHandle from './FormHandle';
-import ZodVal from './ZodVal';
+// import ZodVal from './ZodVal';
+// import FetchAPI from "./FetchAPI";
+import FetchAPE from "./FetchAPI";
 // import Card from './Card';
 // import  Events  from './Events';
 const App = () => {
@@ -137,7 +139,9 @@ const App = () => {
       {/* <Custom/> */}
       {/* <Form/>
       <FormHandle/> */}
-      <ZodVal/>
+      {/* <ZodVal/> */}
+      {/* <FetchAPI/> */}
+      <FetchAPE/>
     
 
       {/* <h2>Hi, Everyone</h2>
