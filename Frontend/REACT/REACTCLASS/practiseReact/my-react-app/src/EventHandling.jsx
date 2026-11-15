@@ -220,59 +220,198 @@
 
 // practise of multiple input 
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-const EventHandle = () => {
-    const [data , setData] = useState({
-        name: "",
-        email: "",
-        password: ""
-    })
-    const handleChange = (e) => {
-        const {name , value} = e.target ;
+// const EventHandle = () => {
+//     const [data , setData] = useState({
+//         name: "",
+//         email: "",
+//         password: ""
+//     })
+//     const handleChange = (e) => {
+//         const {name , value} = e.target ;
 
-        setData((prevData)=>({
-            ...prevData , 
-            [name] : value
-        }))
-    }
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-        alert("Your form is sumiteed successfully")
-        console.log("Your form sumiteed")
-    }
-    return(
-        <>
-        <h1>This is multiple input management</h1>
-        <form onSubmit={handleSubmit}>
-            <input
-            type="text"
-            name="name"
-            value={data.name}
-           placeholder="Enter your name"
-            onChange={handleChange}
-            />
-            <input
-            type="email"
-            name="email"
-            value={data.email}
-           placeholder="Enter your email"
-            onChange={handleChange}
-            />
-            <input
-            type="text"
-            name="password"
-            value={data.password}
-           placeholder="Enter your password"
-            onChange={handleChange}
-            />
-            <button type="submit">Submit</button>
-        </form>
-        <h2>Your name: {data.name}</h2>
-        <h2>Your email: {data.email}</h2>
-        <h2>Your password: {data.password}</h2>
-        </>
-    )
-}
+//         setData((prevData)=>({
+//             ...prevData , 
+//             [name] : value
+//         }))
+//     }
+//     const handleSubmit = (e) =>{
+//         e.preventDefault();
+//         alert("Your form is sumiteed successfully")
+//         console.log("Your form sumiteed")
+//     }
+//     return(
+//         <>
+//         <h1>This is multiple input management</h1>
+//         <form onSubmit={handleSubmit}>
+//             <input
+//             type="text"
+//             name="name"
+//             value={data.name}
+//            placeholder="Enter your name"
+//             onChange={handleChange}
+//             />
+//             <input
+//             type="email"
+//             name="email"
+//             value={data.email}
+//            placeholder="Enter your email"
+//             onChange={handleChange}
+//             />
+//             <input
+//             type="text"
+//             name="password"
+//             value={data.password}
+//            placeholder="Enter your password"
+//             onChange={handleChange}
+//             />
+//             <button type="submit">Submit</button>
+//         </form>
+//         <h2>Your name: {data.name}</h2>
+//         <h2>Your email: {data.email}</h2>
+//         <h2>Your password: {data.password}</h2>
+//         </>
+//     )
+// }
 
-export default EventHandle
+// export default EventHandle
+//zod 
+
+// // controlled component
+// import { useState } from "react";
+
+// const EventHandle  = () => {
+//     const [data ,setData] = useState({
+//         name : "",
+//         email: "" 
+//     })
+//     const handleChange = (e) => {
+//         const { name , value} = e.target ;
+
+//         setData((PrevData)=>({
+//             ...PrevData , 
+//             [name] : value
+//         }))
+//     }
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         alert("form is submitted")
+
+//     }
+//     return(
+//         <>
+//         <h1>This is controlled component</h1>
+//         <form onSubmit={handleSubmit}>
+//             <input
+//             type="name"
+//             name="name"
+//             value={data.name}
+//             placeholder="Enter your name"
+//             onChange={handleChange} />
+//             <input
+//             type="email"
+//             name="email"
+//             value={data.email}
+//             placeholder="Enter your email"
+//             onChange={handleChange}/>
+//         <button type="submit"> Submit </button>
+//         </form>
+//         <h2>Your name: {data.name}</h2>
+//         <h2>Your email: {data.email}</h2>
+//         </>
+//     )
+// }
+
+// export default EventHandle ; 
+
+//uncontrolled component
+// import { useRef } from "react";
+
+// const EventHandle = () => {
+//     const nameRef = useRef(null);
+
+//     const handleSubmit = () => {
+//         alert("your form is submitted")
+
+//     }
+//     return(
+//         <>
+//         <h1>This is uncontrolled component</h1>
+//         <form>
+//         <input
+//         type="name"
+//         ref={nameRef}
+//         placeholder="Enter your name"
+//         />
+//         <button onClick={handleSubmit}>Submit</button>
+//         </form> 
+//         </>
+//     )
+// }
+
+// export default EventHandle ; 
+
+// //login form
+// import { useState } from "react";
+
+// const EventHandle = () => {
+//     const [data , setData] = useState({
+//         name: "", 
+//         email: "",
+//         password: ""        
+//     })
+//     const [message , setMessage] = useState("")
+//     const handleChange = (e) => {
+//         const {name , value} = e.target ;
+//         setData((prevData)=>({
+//             ...prevData , 
+//             [name]:value  
+//         }))
+//     }
+//     const handleSubmit = (e) => {
+//         e.preventDefault();
+//         if(!data.name || !data.email || !data.password)
+//             setMessage("You have to fill");
+//         else{
+//             setMessage("your form is submitted")
+//             alert("form submitted")
+//         }
+//     }
+//     return(
+//         <>
+//         <h1>This is login form</h1>
+//         <form onSubmit={handleSubmit}>
+//         <input
+//         type="text"
+//         name="name"
+//         value={data.name}
+//         placeholder="enter name" 
+//         onChange={handleChange} />
+//         <input
+//         type="email"
+//         name="email"
+//         value={data.email}
+//         placeholder="enter email" 
+//         onChange={handleChange} />
+//         <input
+//         type="text"
+//         name="password"
+//         value={data.password}
+//         placeholder="enter password"
+//         onChange={handleChange}  />
+//         <button type="submit">Submit</button>
+//         </form>
+//         <h2>name:{data.name}</h2>
+//         <h2>email:{data.email}</h2>
+//         <h2>password:{data.password}</h2>
+//         <p>{message}</p>
+//         </>
+//     )
+// }
+
+// export default EventHandle ;    
+
+
+
+

@@ -2,17 +2,17 @@ import { useState } from 'react'
 
 // import './App.css'
 // import FormHandle from './formHandling'
-// import EventHandle from './EventHandling'
+import EventHandle from './EventHandling'
 // import HandleLogin from './loginHandling'
-import ZodVal from './ZodValidation'
+// import ZodVal from './ZodValidation'
 function App() {
 
   return (
     <>
       {/* <FormHandle/> */}
-      {/* <EventHandle/> */}
+      <EventHandle/>
       {/* <HandleLogin/> */}
-      <ZodVal/>
+      {/* <ZodVal/> */}
     </>
   )
 }
