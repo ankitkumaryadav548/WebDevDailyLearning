@@ -3,6 +3,8 @@
 // what is event handling in react.js
 // event handling is the process in which user perform action and in response execute some specific tasks
 
+
+
 {/* <button onClick={handleClick}></button> */}
 
 // here onClick is react event handler
@@ -412,6 +414,87 @@
 
 // export default EventHandle ;    
 
+//schema-based validation 
 
+// Schema-based validation is a technique in validation in which we define a structure of object , datatype and validation rule of object in a schema 
 
+    //zod validation
 
+    import { useState } from "react";
+    import {z} from "zod"
+    //schema
+    const studentSchema = z.object({
+        name : z.string()
+            .trim()
+            .min(3, "minimum 3 chaeacter"), 
+        email:z.email("Enter your email"),
+        password:z.string()
+                .min(8 , "minimum 8 character")
+    })
+
+    const EventHandle = () =>{
+
+        const [data , setData]  = useState({
+            name:"" ,
+            email:"",
+            password:""
+        })
+        const [message , setMessage] = useState("");
+
+        const handleChange = (e) => {
+            const {name , value} = e.target;
+            setData((prevData)=>({
+                ...prevData,
+                [name]:value 
+            }))
+            setMessage("");
+        }
+
+        const handleSubmit = (e) => {
+            e.preventDefault();
+            const result = studentSchema.safeParse(data);
+            if(!result.success) setMessage(result.error.issues[0].message);
+            else{
+                setMessage("form is sumitted successfully");
+                alert("form submitted");
+                console.log(result.data )
+            }
+
+        }
+        return(
+            <>
+            <h1>Zod validation</h1>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <input
+                    type="text"
+                    name="name"
+                    value={data.name}
+                    onChange={handleChange}
+                    placeholder="Enter name"/>
+                </div>
+                <div>
+                    <input
+                    type="email"
+                    name="email"
+                    value={data.email}
+                    onChange={handleChange}
+                    placeholder="Enter email"/>
+                </div>
+                <div>
+                    <input
+                    type="text"
+                    name="password"
+                    value={data.password}
+                    onChange={handleChange}
+                    placeholder="Enter password"/>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+            {message}
+            </>
+        )
+
+    }
+
+    export default EventHandle ; 

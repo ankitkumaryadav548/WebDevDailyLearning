@@ -28,7 +28,6 @@ import { NextResponse } from "next/server";
 // }
 
 //post method 
-
 // import {NextResponse} from "next/server"
 
 export async function POST(request) {

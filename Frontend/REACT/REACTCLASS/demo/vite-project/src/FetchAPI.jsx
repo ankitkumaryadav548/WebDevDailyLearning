@@ -1,41 +1,41 @@
 
-// // import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-// // const FetchAPI = () => {
-// //     const [user , setUser] = useState([]);
-// //     useEffect(()=>{
-// //         fetch("https://jsonplaceholder.typicode.com/users")
-// //             .then(response => {
-// //                 if(!response.ok)  throw new Error("data is not fetch")
-// //                 else return response.json();
-// //             })
-// //             .then(data => {
-// //                 setUser(data);
-// //             })
-// //             .catch(error => {
-// //                 console.log(error.message)
-// //             })
-// //     },[])  // if here [] arraw will remove then it will run infinite time 
-// //     return(
-// //         <>
-// //         <h1>Fetch data</h1>
-// //         <div>
-// //             {
-// //                 user.map((item) => (
+const FetchAPI = () => {
+    const [user , setUser] = useState([]);
+    useEffect(()=>{    // useEffect is used to rerendering
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then(response => {
+                if(!response.ok)  throw new Error("data is not fetch")
+                else return response.json();
+            })
+            .then(data => {
+                setUser(data);
+            })
+            .catch(error => {
+                console.log(error.message)
+            })
+    },[])  // if here [] arraw will remove then it will run infinite time 
+    return(
+        <>
+        <h1>Fetch data</h1>
+        <div>
+            {
+                user.map((item) => (
                     
-// //                     <div key = {item.id}>
-// //                         <h2>{item.name}</h2>
-// //                         <h2>{item.email}</h2>
-// //                         </div>
+                    <div key = {item.id}>
+                        <h2>{item.name}</h2>
+                        <h2>{item.email}</h2>
+                        </div>
                     
-// //                 ))
-// //             }
-// //         </div>
-// //         </>
-// //     )
-// // }
+                ))
+            }
+        </div>
+        </>
+    )
+}
 
-// // export default FetchAPI ; 
+export default FetchAPI ; 
 
 // // alternate of fetch is axios 
 // // both fetch and axios are used to fetch/retrive data 
@@ -310,44 +310,44 @@
 // axios => axios is same like fetch but it is not buildin wenhave to install it
 // axios is JavaScript library ad in axios we don;t have to parse data inot json , it automatically parsed 
 
-import { useState , useEffect } from "react";
-import axios from "axios";
-const FetchAPE = () => {
-    const [user , setUser] = useState([]);
-    useEffect(()=>{
-        const getUser = async () => {
-            try{
-                const response  = await axios.get("https://jsonplaceholder.typicode.com/users")
-            // if(!response.ok) throw new Error("data is not fetched!") // not use in axios
-                const data = response.data;
-                setUser(data);
-            }
-            catch(err) {console.log(err.message);}
+// import { useState , useEffect } from "react";
+// import axios from "axios";
+// const FetchAPE = () => {
+//     const [user , setUser] = useState([]);
+//     useEffect(()=>{
+//         const getUser = async () => {
+//             try{
+//                 const response  = await axios.get("https://jsonplaceholder.typicode.com/users")
+//             // if(!response.ok) throw new Error("data is not fetched!") // not use in axios
+//                 const data = response.data;
+//                 setUser(data);
+//             }
+//             catch(err) {console.log(err.message);}
 
-        }
-        getUser();
-    },[]);
+//         }
+//         getUser();
+//     },[]);
 
-    return(
-        <>
-        <div>
-            {
-                user.map((items)=>(
-                    <div key={items.id}>
-                        <h2>{items.name}</h2>
-                        <h2>{items.email}</h2>
-                        </div>
-                ))
-            }
-        </div>
-        </>
-    )
-}
-
-
+//     return(
+//         <>
+//         <div>
+//             {
+//                 user.map((items)=>(
+//                     <div key={items.id}>
+//                         <h2>{items.name}</h2>
+//                         <h2>{items.email}</h2>
+//                         </div>
+//                 ))
+//             }
+//         </div>
+//         </>
+//     )
+// }
 
 
-export default FetchAPE ; 
+
+
+// export default FetchAPE ; 
 
 
 
