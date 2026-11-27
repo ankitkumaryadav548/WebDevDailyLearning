@@ -1,5 +1,5 @@
 
-import Counter from './Counter'
+// import Counter from './Counter'
 import FormHandler from './FormHandler'
 function App() {
   return (
